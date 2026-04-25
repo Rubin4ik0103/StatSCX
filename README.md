@@ -131,17 +131,8 @@ SERVER MEMBERS INTENT
 ### Шаблон
 
 ```text
-A2:K5
-```
-
-```text
-A2 Дата и время
-B2 Время
-C2 Ник
-D2 1 этап
-E2 2 этап
-F2 3 этап
-G2 Участие
+Копируем таблицу себе
+https://docs.google.com/spreadsheets/d/1YRckeDjtTxk_e_R3WC0ZIw6xICstGHJkj3j7rY_EeQM/edit?usp=sharing
 ```
 
 ---
