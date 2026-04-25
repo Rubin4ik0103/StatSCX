@@ -15,14 +15,14 @@
 
 ## 🚀 Возможности
 
-- ✅ Учет присутствия игроков  
-- ✅ Учет отсутствий с причиной  
-- ✅ Запись статистики по этапам  
-- ✅ Добавление и исключение игроков  
-- ✅ Автоотчеты по отсутствующим  
-- ✅ Работа по игровым дням  
-- ✅ Google Sheets как база данных  
-- ✅ Полная автоматизация клана  
+* ✅ Учет присутствия игроков
+* ✅ Учет отсутствий с причиной
+* ✅ Запись статистики по этапам
+* ✅ Добавление и исключение игроков
+* ✅ Автоотчеты по отсутствующим
+* ✅ Работа по игровым дням
+* ✅ Google Sheets как база данных
+* ✅ Полная автоматизация клана
 
 ---
 
@@ -70,7 +70,7 @@ Google Sheets обновляется
 
 ### 1. Установить Python
 
-https://www.python.org/downloads/
+[https://www.python.org/downloads/](https://www.python.org/downloads/)
 
 Во время установки включить:
 
@@ -97,13 +97,24 @@ ClanBot/
 
 ---
 
-## 🤖 Настройка Discord Bot
+## 🤖 Настройка Discord Bot (подробно)
 
-1. Открыть https://discord.com/developers/applications
-2. New Application
-3. Bot → Add Bot
-4. Reset Token
-5. Включить:
+1. Открыть сайт:
+   [https://discord.com/developers/applications](https://discord.com/developers/applications)
+
+2. Войти в Discord аккаунт при необходимости
+
+3. Нажать `New Application`
+
+4. Ввести название бота.
+
+5. Перейти во вкладку `Bot` → `Add Bot`
+
+6. Нажать `Reset Token`
+
+7. Скопировать токен
+
+8. Ниже включить:
 
 ```text
 MESSAGE CONTENT INTENT
@@ -112,34 +123,53 @@ SERVER MEMBERS INTENT
 
 ---
 
-## 📊 Настройка Google Таблицы
+## 📊 Настройка Google Таблицы (готовый шаблон)
 
-Создать таблицу и листы:
+Тебе НЕ нужно создавать таблицу вручную.
+
+Используй готовый шаблон:
+
+[https://docs.google.com/spreadsheets/d/1YRckeDjtTxk_e_R3WC0ZIw6xICstGHJkj3j7rY_EeQM/edit?usp=sharing](https://docs.google.com/spreadsheets/d/1YRckeDjtTxk_e_R3WC0ZIw6xICstGHJkj3j7rY_EeQM/edit?usp=sharing)
+
+### Что сделать:
+
+1. Открой ссылку.
+2. Нажми:
+
+```text
+Файл → Создать копию
+```
+
+3. Назови таблицу как удобно.
+4. Сохрани копию себе на Google Drive.
+
+После этого у тебя будет полностью готовая таблица:
 
 ```text
 Шаблон
 Игроки
+Формулы
+Оформление
+Статистика
 ```
 
-### Игроки
+### Затем вставь ссылку своей копии в `.env`
 
-| Ник | Дата вступления |
-|-----|-----------------|
-| Player1 | 01.04.2026 |
-| Player2 | 01.04.2026 |
-
-### Шаблон
-
-```text
-Копируем таблицу себе
-https://docs.google.com/spreadsheets/d/1YRckeDjtTxk_e_R3WC0ZIw6xICstGHJkj3j7rY_EeQM/edit?usp=sharing
+```env
+GOOGLE_SHEET_URL=сюда_ссылку_твоей_копии
 ```
+
+### Как получить ссылку:
+
+1. Открой свою копию таблицы.
+2. Скопируй ссылку из браузера.
+3. Вставь в `.env`
 
 ---
 
 ## 🔐 Google API
 
-Открыть https://console.cloud.google.com/
+Открыть [https://console.cloud.google.com/](https://console.cloud.google.com/)
 
 Включить:
 
@@ -159,12 +189,12 @@ credentials.json
 
 ---
 
-## 🧩 Файл .env
+## 🧩 Файл .env (что куда вставлять)
 
 ```env
-DISCORD_TOKEN=ВАШ_ТОКЕН
-GOOGLE_SHEET_URL=https://docs.google.com/spreadsheets/d/XXXXX/edit
-REPORT_CHANNEL_ID=1234567890
+DISCORD_TOKEN=сюда_токен_бота
+GOOGLE_SHEET_URL=сюда_ссылку_на_твою_копию_таблицы
+REPORT_CHANNEL_ID=сюда_id_канала_отчетов
 
 PLAYERS_SHEET_NAME=Игроки
 TEMPLATE_SHEET_NAME=Шаблон
@@ -189,10 +219,16 @@ BLOCK_END_COLUMN_INDEX=11
 
 ---
 
-## ▶️ Запуск
+## ▶️ Запуск бота
 
 ```bash
 python main.py
+```
+
+Если Windows пишет что python не найден:
+
+```bash
+py main.py
 ```
 
 Если успешно:
@@ -203,11 +239,18 @@ python main.py
 
 ---
 
-## 🖥️ Автозапуск Windows
+## 🖥️ Автозапуск Windows (чтобы бот запускался сам)
 
-Win + R → `shell:startup`
+1. Нажать `Win + R`
+2. Ввести:
 
-Создать файл `start_bot.bat`
+```text
+shell:startup
+```
+
+3. Откроется папка автозагрузки
+
+4. Создать файл `start_bot.bat`
 
 ```bat
 cd /d C:\ClanBot
@@ -216,18 +259,37 @@ python main.py
 
 ---
 
+## 🆔 Как узнать ID Discord канала
+
+1. Discord → Настройки пользователя.
+2. Дополнительно.
+3. Включить `Режим разработчика`.
+4. ПКМ по нужному каналу.
+5. `Копировать ID`.
+6. Вставить в `.env` как:
+
+```env
+REPORT_CHANNEL_ID=1234567890
+```
+
+---
+
 ## ❓ Частые ошибки
 
 ### Команды не появились
+
 Подожди 1-5 минут.
 
 ### credentials.json not found
+
 Файл лежит не в папке проекта.
 
 ### Spreadsheet not found
+
 Таблица не открыта для service account.
 
 ### Ошибка 429
+
 Увеличить:
 
 ```env
@@ -243,6 +305,7 @@ FLUSH_INTERVAL_SECONDS=40
 <div align="center">
 
 # 🎁 Игровой ник:
+
 # Andrewivannik
 
 </div>
@@ -258,4 +321,3 @@ FLUSH_INTERVAL_SECONDS=40
 ### Удачной игры ⚔️
 
 </div>
-
